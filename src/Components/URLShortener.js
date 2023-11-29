@@ -9,20 +9,24 @@ const URLShortener = () => {
   };
 
   return (
-    <div>
-      <h2>URL Shortener</h2>
-      <form>
-        <label>Original URL:</label>
-        <input type="url" value={originalURL} onChange={(e) => setOriginalURL(e.target.value)} />
-        <button type="button" onClick={handleShortenURL}>Shorten URL</button>
-      </form>
-      {shortenedURL && (
-        <div>
-          <p>Shortened URL:</p>
-          <a href={shortenedURL} target="_blank" rel="noopener noreferrer">{shortenedURL}</a>
-        </div>
-      )}
+   <div class="container mt-5">
+  <h2>URL Shortener</h2>
+  <form>
+    <div class="form-group">
+      <label for="originalURL">Original URL:</label>
+      <input type="url" class="form-control" id="originalURL" value="{originalURL}" onChange={(e) => setOriginalURL(e.target.value)} />
     </div>
+    <button type="button" class="btn btn-primary" onClick={handleShortenURL}>Shorten URL</button>
+  </form>
+
+  {shortenedURL && (
+    <div class="mt-3">
+      <p>Shortened URL:</p>
+      <a href="{shortenedURL}" target="_blank" rel="noopener noreferrer" class="btn btn-success">{shortenedURL}</a>
+    </div>
+  )}
+</div>
+
   );
 };
 
